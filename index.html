@@ -1,9 +1,49 @@
 <DOCTYPE! HTML>
 <html>
   <head>
-    <title>Yev's Site</title>
+    <title>yev_irl</title>
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <style type="text/css">
+    	body{
+    		background: #CC0000;
+    	}
+    	.s{
+    		position:fixed;bottom: 0;right:0;
+    		height:20; width:20; background: white;padding:5px;
+    	}
+    	#logo{
+    		max-width:90%;max-height: 90%;
+    		position: absolute;left:50%;top:50%;transform: translate(-50%,-50%)
+    	}
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+  	<audio loop id="good-sounds"><source src="https://www.marxists.org/history/ussr/sounds/mp3/soviet-anthem.mp3" type="audio/mpeg"></audio>
+    <img onclick="sound()" height="20" width="20" class="s" ></img>
+    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Hammer_and_sickle.svg"></img>
+    <script type="text/javascript">
+    	let isPlaying = false
+    	let au = $('#good-sounds')[0]
+ 		console.log('this website hurts my eyes')
+    	function sound(){
+    		if(isPlaying){
+    			$('.s').attr('src', 'https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png')
+    			console.clear()
+    			console.log('why must you mute our glorious music?')
+    			au.pause()
+    		}
+    		else{
+    			$('.s').attr('src', 'https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/volume-24-512.png')
+    			console.clear()
+    			console.log('memes semem')
+    			au.play()
+    		}
+    		isPlaying = !isPlaying
+    	}
+    	sound()
+    </script>
   </body>
 </html>
